@@ -1,0 +1,83 @@
+global:
+  yolo_model_path: "yolo11n.pt" # yolov8n.pt, yolo11n.pt
+  tracker_type: "bytetrack" # botsort, bytetrack
+  host: "0.0.0.0"
+  reid_service_url: "http://127.0.0.1:8000"
+  display_frames: true
+  reid: true
+  reid_model_name: "osnet_x1_0" # osnet_x1_0, osnet_ain_x1_0, osnet_ibn_x1_0
+  # reid_model_path: "./trained_weights/osnet_ain_ms_d_c.pth.tar"
+  # reid_model_path: "./trained_weights/osnet_ain_ms_m_c.pth.tar"
+  # reid_model_path: "./trained_weights/osnet_ain_x1_0_dukemtmcreid_256x128_amsgrad_ep90_lr0.0015_coslr_b64_fb10_softmax_labsmth_flip_jitter.pth"
+  # reid_model_path: "./trained_weights/osnet_ain_x1_0_market1501_256x128_amsgrad_ep100_lr0.0015_coslr_b64_fb10_softmax_labsmth_flip_jitter.pth"
+  # reid_model_path: "./trained_weights/osnet_ain_x1_0_msmt17_256x128_amsgrad_ep50_lr0.0015_coslr_b64_fb10_softmax_labsmth_flip_jitter.pth"
+  # reid_model_path: "./trained_weights/osnet_ibn_ms_d_c.pth.tar"
+  # reid_model_path: "./trained_weights/osnet_ibn_ms_m_c.pth.tar"
+  # reid_model_path: "./trained_weights/osnet_ibn_x1_0_duke_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip.pth"
+  # reid_model_path: "./trained_weights/osnet_ibn_x1_0_market1501_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip_jitter.pth"
+  # reid_model_path: "./trained_weights/osnet_ibn_x1_0_msmt17_combineall_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip_jitter.pth"
+  # reid_model_path: "./trained_weights/osnet_ms_d_c.pth.tar"
+  # reid_model_path: "./trained_weights/osnet_ms_m_c.pth.tar"
+  # reid_model_path: "./trained_weights/osnet_x1_0_duke_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip.pth"
+  # reid_model_path: "./trained_weights/osnet_x1_0_market_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip.pth"
+  # reid_model_path: "./trained_weights/osnet_x1_0_msmt17_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip.pth"
+  # reid_model_path: "./trained_weights/osnet_x1_0_msmt17_combineall_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip_jitter.pth"
+  # reid_model_path: "./trained_weights/osnet_randperson_ms_d_c.pth"
+  reid_model_path: "./trained_weights/osnet_clonedperson_ms_d_c.pth"
+  reid_min_area: 5000
+  reid_threshold: 0.75
+  reid_eval_verbose: false  
+  save_for_yolo: false
+
+evaluation:
+  enabled: true
+  # run_name: "yolo11n_bytetrack_osnet_ain_x1_0_imagenet"
+  # run_name: "yolo11n_bytetrack_osnet_ain_x1_0_ms_d_c"
+  # run_name: "yolo11n_bytetrack_osnet_ain_x1_0_ms_m_c"
+  # run_name: "yolo11n_bytetrack_osnet_ain_x1_0_duke"
+  # run_name: "yolo11n_bytetrack_osnet_ain_x1_0_market"
+  # run_name: "yolo11n_bytetrack_osnet_ain_x1_0_msmt17all"
+  # run_name: "yolo11n_bytetrack_osnet_ibn_x1_0_imagenet"
+  # run_name: "yolo11n_bytetrack_osnet_ibn_x1_0_ms_d_c"
+  # run_name: "yolo11n_bytetrack_osnet_ibn_x1_0_ms_m_c"
+  # run_name: "yolo11n_bytetrack_osnet_ibn_x1_0_duke"
+  # run_name: "yolo11n_bytetrack_osnet_ibn_x1_0_market"
+  # run_name: "yolo11n_bytetrack_osnet_ibn_x1_0_msmt17all"
+  # run_name: "yolo11n_bytetrack_osnet_x1_0_imagenet"
+  # run_name: "yolo11n_bytetrack_osnet_x1_0_ms_d_c"
+  # run_name: "yolo11n_bytetrack_osnet_x1_0_ms_m_c"
+  # run_name: "yolo11n_bytetrack_osnet_x1_0_duke"
+  # run_name: "yolo11n_bytetrack_osnet_x1_0_market"
+  # run_name: "yolo11n_bytetrack_osnet_x1_0_msmt17"
+  # run_name: "yolo11n_bytetrack_osnet_x1_0_msmt17all"
+  # run_name: "yolo11n_bytetrack_osnet_x1_0_randperson"
+  run_name: "yolo11n_bytetrack_osnet_x1_0_clonedperson"
+  iou_threshold: 0.35
+  match_mode: "iou"
+  eval_tracking: true
+  eval_reid: true
+  # output_dir: "./eval0_day"
+  # output_dir: "./eval0_daynight"
+  # output_dir: "./eval1"
+  output_dir: "./demo"
+  save_eval_results: true
+  save_per_camera_results: false
+  save_aggregate_results: true
+
+
+cameras:
+  - camera_id: "0"
+    host: "0.0.0.0"
+    port: 5005
+
+  - camera_id: "1"
+    host: "0.0.0.0"
+    port: 5006
+
+  - camera_id: "2"
+    host: "0.0.0.0"
+    port: 5007
+
+  - camera_id: "3"
+    host: "0.0.0.0"
+    port: 5008

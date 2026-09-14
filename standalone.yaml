@@ -1,0 +1,21 @@
+global:
+  yolo_model_path: "yolo11n.pt"
+  yolo_conf_threshold: 0.35
+  tracker_type: "bytetrack"
+  host: "0.0.0.0"
+  display_frames: true
+
+evaluation:
+  enabled: false
+  run_name: "yolov8n_bytetrack"
+  iou_threshold: 0.35
+  match_mode: "iou"
+  eval_reid: false
+  eval_reid_trackeval: false 
+  output_dir: "./eval2"
+
+
+cameras:
+  - camera_id: "0"
+    host: "0.0.0.0"
+    port: 5005

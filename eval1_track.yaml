@@ -1,0 +1,33 @@
+global:
+  yolo_model_path: "yolo11n.pt" # yolov8n.pt, yolo11n.pt, yolo26n.pt
+  # yolo_conf_threshold: 0.25
+  tracker_type: "bytetrack" # botsort, bytetrack
+  host: "0.0.0.0"
+  reid_service_url: "http://127.0.0.1:8000"
+  display_frames: true
+  reid: false
+  reid_eval_verbose: false  
+
+evaluation:
+  enabled: true
+  run_name: "yolo11n_bytetrack"
+  iou_threshold: 0.35
+  match_mode: "iou"
+  eval_tracking: true
+  eval_reid: false
+  output_dir: "./tracking_eval1"
+  save_eval_results: true
+
+
+cameras:
+  - camera_id: "0"
+    host: "0.0.0.0"
+    port: 5005
+
+  - camera_id: "1"
+    host: "0.0.0.0"
+    port: 5006
+
+  - camera_id: "2"
+    host: "0.0.0.0"
+    port: 5007

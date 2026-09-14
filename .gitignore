@@ -1,0 +1,8 @@
+/.vscode
+*_pycache__
+
+/trained_weights/*
+!/trained_weights/osnet_clonedperson_ms_d_c.pth
+!/trained_weights/osnet_randperson_ms_d_c.pth
+
+*.pt
