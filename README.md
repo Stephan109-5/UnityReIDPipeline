@@ -1,6 +1,6 @@
-# NTUT IEECS Master Thesis - ReID pipeline for Unity Simulation
+# [NTUT IEECS Master Thesis - ReID pipeline for Unity Simulation](https://hdl.handle.net/11296/jxjt32)
 
-This is my master thesis project. This repository contains the code for launching re-identification computer vision pipeline for the [simulated environment in Unity](https://github.com/Stephan109-5/ReID-Unity).
+As part of my master thesis project, this repository contains the Python code launching re-identification computer vision pipeline for the [simulated environment in Unity](https://github.com/Stephan109-5/ReID-Unity).
 
 # Prerequisite
 
@@ -17,6 +17,7 @@ Also make sure to have Unity 6.3 LTS (6000.3.14f1) installed and be ready to run
 
 # FastApi Gallery Service
 
+FastApi is used to host a live on-memory embedding gallery for cross-camera re-identification.
 To start the Embedding Gallery Service:
 ```
 uvicorn src.gallery.server:app --host <IP> --port <Port No.>
